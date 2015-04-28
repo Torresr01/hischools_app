@@ -1,0 +1,50 @@
+<% if @school.errors.any? %>
+  <h2>There were errors saving your school</h2>
+  <ul>
+    <% @school.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @school do |f| %>
+  <fieldset>
+    <div class='fields'>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class='fields'>
+      <%= f.label :total %>
+      <%= f.text_field :total %>
+    </div>
+    <div class='fields'>
+      <%= f.label :schooltype %>
+      <%= f.text_field :schooltype %>
+    </div>
+    <div class='fields'>
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+    </div>
+    <div class='fields'>
+      <%= f.label :city %>
+      <%= f.text_field :city %>
+    </div>
+
+    <div class='fields'>
+      <%= f.label :state %>
+      <%= f.text_field :state %>
+
+    <div class='fields'>
+      <%=f.label :zip %>
+      <%= f.text_field :zip %>
+    </div>
+    <div class='fields'>
+      <%=f.label :url %>
+      <%= f.text_field :url %>
+    </div>
+  </fieldset>
+  <%= f.submit %>
+<% end %>
+
+<br/>

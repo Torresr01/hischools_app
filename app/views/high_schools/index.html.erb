@@ -1,9 +1,0 @@
-<% @school.each do |school| %>
-	<p> Name: <%= school.name %></p>
-	<p>Type: <%= school.schooltype %></p>
-	<p>City: <%= school.city %></p>
-	<p>State: <%= school.state %></p>
-	<p><%= link_to "show", high_school_path(school)   %></p>
-
-	<p>-----------------------------<p>
-<% end %>

@@ -1,0 +1,22 @@
+	
+</head>
+<body align="center">
+
+<h1>HiSchools!</h1>
+
+	<p><%= link_to "Add School", new_school_path(@school) %></p>
+
+	<%= form_tag search_path, method: :get do %>
+		<%= text_field_tag :search, params[:search] %>
+		<%= submit_tag "Search", :name => nil %>
+	<% end %>
+
+<% @school.each do |data| %>
+	<p><%= data.name %></p>
+	<p>Type: <%= data.schooltype %></p>
+	<p>City: <%= data.city %></p>
+	<p>State: <%= data.state %></p>
+	<p><%= link_to "Show", school_path(data)%>         |      
+	<%= link_to "Edit", edit_school_path(data) %></p>
+	<p>-----------------------------<p>
+<% end %>

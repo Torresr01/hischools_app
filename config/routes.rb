@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  
   devise_for :users
 
- 
-  root "high_schools#index"
-
-  resources :high_schools
+  root "schools#index"
+  get 'search', to: 'schools#search'
+  
+  resources :schools
 end
