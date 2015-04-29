@@ -3,7 +3,7 @@ def index
 		@education_data = JSON.load(RestClient.get('http://api.education.com/service/service.php?f=schoolSearch&key=068b396b4a183cb329a791a26099b837&sn=sf&v=4&city=san+francisco&state=ca&resf=json'))
 
 		@education_data.each do |school_data|
-			@school = School.create
+			@school = School.new
 			@school.name = school_data['school']['schoolname']
 			@school.address = school_data['school']['address']
 			@school.url = school_data['school']['url']
